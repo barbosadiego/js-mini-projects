@@ -1,28 +1,48 @@
-body{
+body {
   display: flex;
   justify-content: center;
   margin: 15vh 0 0;
+  background-color: #444;
 }
 
-.container{
+
+.container {
   width: 50vw;
   height: 50vh;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   position: relative;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.514);
 }
 
-.image-container{
+.image-container {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  height: 50vh;
+  width: 50vw;
   background-color: #666;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+}
+
+.container-item {
+  transition: all 0.3s;
+}
+
+.image-container img {
+  width: 50vw;
+  height: 50vh;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-.button{
-  background-color: #333;
+.image-container div:first-child {
+  margin-left: -100%;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0.514);
   width: 50px;
   font-size: 2rem;
   font-weight: bold;
@@ -32,18 +52,28 @@ body{
   z-index: 1;
   opacity: 0;
   user-select: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.button:hover{
+.button:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-.previous{
+.previous {
   border-radius: 10px 0 0 10px;
 }
 
-.next{
+.next {
   border-radius: 0 10px 10px 0;
+}
+
+@media screen and (max-width:900px) {
+  .container, .image-container, .image-container img{
+    width: 95vw;
+  }
+  .button{
+    opacity: 1;
+    background-color: transparent;
+  }
 }
