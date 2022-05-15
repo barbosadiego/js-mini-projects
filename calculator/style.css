@@ -1,5 +1,68 @@
+*{
+  box-sizing: border-box;
+}
 body{
   background-color: #444;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+.container{
+  padding: 30px;
+  display: grid;
+  place-items: center;
+  font-size: calc(1.5rem);
+  max-width: 350px;
+  margin: 10vh auto;
+  background-color: #11cf80;
+  border-radius: 4px;
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons > div{
+  height: 80px;
+  width: 80px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 4px;
+  font-size: 1.7rem;
+}
+
+.display{
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 4rem;
+}
+
+@media screen and (max-width:600px) {
+  .container{
+    padding: 20px;
+    margin: 0 auto;
+    min-height: auto;
+    max-width: 400px;
+    align-content: center;
+    margin-top: 50px;
+  }
+  .buttons > div{
+    width: 75px;
+    height: 75px;
+  }
 }
