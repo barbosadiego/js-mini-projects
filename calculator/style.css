@@ -5,8 +5,9 @@ body{
   background-color: #444;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
+  user-select: none;
 }
 
 .container{
@@ -14,7 +15,7 @@ body{
   display: grid;
   place-items: center;
   font-size: calc(1.5rem);
-  max-width: 350px;
+  max-width: 420px;
   margin: 10vh auto;
   background-color: #11cf80;
   border-radius: 4px;
@@ -33,7 +34,7 @@ body{
   display: grid;
   place-items: center;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .6);
   border-radius: 4px;
   font-size: 1.7rem;
 }
@@ -50,6 +51,7 @@ body{
   box-sizing: border-box;
   border-radius: 4px;
   font-size: 4rem;
+  overflow: hidden;
 }
 
 @media screen and (max-width:600px) {
