@@ -24,7 +24,7 @@ const calculate = () => {
   newNumber = true;
 
   if (pendingOperation()) {
-    atualNumber = parseFloat(display.textContent.replace(',','.'));
+    atualNumber = parseFloat(display.textContent.replace(',', '.'));
     switch (operator) {
       case '-':
         result = previousNumber - atualNumber;
@@ -52,7 +52,7 @@ const activeOperator = ({ target }) => {
   if (!newNumber) {
     calculate();
     newNumber = true;
-    previousNumber = parseFloat(display.textContent.replace(',','.'));
+    previousNumber = parseFloat(display.textContent.replace(',', '.'));
     operator = target.textContent;
   }
 };
@@ -75,7 +75,9 @@ const clearMemory = () => {
 };
 
 const inverter = () =>
-  (display.textContent = (parseFloat(display.textContent.replace(',','.')) * -1).toLocaleString('pt-BR'));
+  (display.textContent = (
+    parseFloat(display.textContent.replace(',', '.')) * -1
+  ).toLocaleString('pt-BR'));
 
 const backspace = () =>
   (display.textContent = display.textContent.slice(0, -1));
@@ -89,14 +91,42 @@ const insertComma = () => {
   } else {
     if (!isDecimal()) {
       display.textContent += ',';
-      newNumber = false
+      newNumber = false;
     }
   }
 };
 
 // Keyboard map ************************************************
 
+const keyMap = {
+  ESCAPE: 'clearMemory',
+  C: 'clearDisplay',
+  BACKSPACE: 'backspace',
+  '/': 'divideOperator',
+  '*': 'multiplyOperator',
+  '-': 'subtractOperator',
+  '+': 'sumOperator',
+  ',': 'comma',
+  ENTER: 'equal',
+  0: 'key0',
+  1: 'key1',
+  2: 'key2',
+  3: 'key3',
+  4: 'key4',
+  5: 'key5',
+  6: 'key6',
+  7: 'key7',
+  8: 'key8',
+  9: 'key9',
+};
 
+const keyboard = ({ key }) => {
+  // console.log(key.toUpperCase());
+  const allowKey = () => Object.keys(keyMap).indexOf(key) !== -1;
+  if (allowKey()) {
+    document.getElementById(keyMap[key.toUpperCase()]).click();
+  }
+};
 
 // Event Listeners *********************************************
 
@@ -117,3 +147,5 @@ document.getElementById('inverter').addEventListener('click', inverter);
 document.getElementById('backspace').addEventListener('click', backspace);
 
 document.getElementById('comma').addEventListener('click', insertComma);
+
+document.addEventListener('keydown', keyboard);
