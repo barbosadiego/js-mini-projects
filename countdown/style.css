@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url(./concert-g9e6cd7e93_1280.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-position: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding-top: 10vh;
+}
+h1 {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  text-transform: capitalize;
+  text-shadow: 0 0 20px whitesmoke;
+}
+h3 {
+  font-weight: 300;
+  text-shadow: 0 0 10px whitesmoke;
+}
+span {
+  font-size: 5rem;
+  font-weight: 800;
+  text-shadow: 0 0 10px whitesmoke;
+}
+.timer {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, 150px);
+  gap: 100px;
+}
+.timer > div {
+  display: grid;
+  place-items: center;
+  font-size: 2.5rem;
+}
+@media screen and (max-width: 800px) {
+  .timer {
+    gap: 50px;
+  }
+}
