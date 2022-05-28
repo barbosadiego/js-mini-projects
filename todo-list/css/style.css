@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #ff4d58;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+  display: grid;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+.container{
+  margin-top: 5vh;
+  min-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width:1024px) {
+  .container{
+    min-width: 70vw;
+  }
+}
+
+h1{
+  color: white;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.list-container{
+  width: 100%;
+  display: grid;
+  gap: 30px;
+}
+
+.new-item{
+  height: 40px;
+  display: flex;
+}
+
+.new-item input{
+  flex: 1;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  padding: 0 15px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.new-item button{
+  background-color: white;
+  border: none;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(0, 0, 255, 0.8);
+  padding: 0 15px;
+  cursor: pointer;
+  border-radius: 0 3px 3px 0;
+}
+
+.items-list{
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.items-list label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  min-height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 255, 0.3);
+}
+
+.items-list .item{
+  flex-grow: 1;
+  max-width: 30ch;
+  font-size: 1rem;
+}
+@media screen and (max-width:500px) {
+  .items-list .item{
+    font-size: .875rem;
+  }
+}
+
+.items-list input[type='checkbox']{
+  width: 17px;
+  height: 17px;
+}
+
+.items-list input[type='button']{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: #ff4d58;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+.items-list input[type='checkbox']:checked + div{
+  text-decoration: line-through;
+}
