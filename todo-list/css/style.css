@@ -124,3 +124,16 @@ h2{
 .items-list input[type='checkbox']:checked + p{
   text-decoration: line-through;
 }
+
+.clear-btn{
+  justify-self: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}

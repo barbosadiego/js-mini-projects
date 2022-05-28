@@ -2,22 +2,17 @@
 const container = document.getElementById('items-list');
 const newItem = document.getElementById('new-item');
 const button = document.getElementById('button');
-
-// const banco1 = [
-//   { item: 'comer caviar', status: '' },
-//   { item: 'correr à tarde', status: 'checked' },
-//   { item: 'ver filmes', status: '' },
-//   { item: 'comprar cocada', status: '' },
-// ];
+const clearBtn = document.getElementById('clear-btn');
 
 const getBanco = () => JSON.parse(localStorage.getItem('task-list')) ?? [];
 const setBanco = (banco) =>
   localStorage.setItem('task-list', JSON.stringify(banco));
 
-function startItems(banco) {
+function startItems() {
   clearDisplay();
-  banco = getBanco();
+  const banco = getBanco();
   banco.forEach((task, index) => createItem(task.item, task.status, index));
+  checkClearBtn();
 }
 
 function createItem(item, status, index) {
@@ -65,10 +60,22 @@ function handleStatus(event) {
   }
 }
 
+function checkClearBtn() {
+  const banco = getBanco();
+  if (banco.length > 1) {
+    clearBtn.style.opacity = '1';
+    clearBtn.style.pointerEvents = 'initial';
+  } else {
+    clearBtn.style.opacity = '0';
+    clearBtn.style.pointerEvents = 'none';
+  }
+}
+
 function updateDisplay() {
   clearDisplay();
   const banco = getBanco();
   banco.forEach((task, index) => createItem(task.item, task.status, index));
+  checkClearBtn();
 }
 
 function clearDisplay() {
@@ -77,7 +84,13 @@ function clearDisplay() {
   }
 }
 
+function clearData() {
+  localStorage.clear();
+  updateDisplay();
+}
+
 button.addEventListener('click', insertItem);
 container.addEventListener('click', handleStatus);
+clearBtn.addEventListener('click', clearData);
 
-startItems(getBanco);
+startItems();
