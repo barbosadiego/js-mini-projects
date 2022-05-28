@@ -7,7 +7,7 @@ const createItem = (item) => {
   li.classList.add('item');
   li.innerHTML = `
     <img src="${item.img}" alt="">
-    <a href="${item.url}"> Ver projeto </a>
+    <a href="${item.url}" target="_blank"> Ver projeto </a>
   `;
   list.appendChild(li);
 };
