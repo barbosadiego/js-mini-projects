@@ -36,6 +36,12 @@ h1{
   line-height: 1.4;
 }
 
+h2{
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
 .list-container{
   width: 100%;
   display: grid;
@@ -71,16 +77,16 @@ h1{
 
 .items-list{
   background-color: white;
-  padding: 15px;
   border-radius: 3px;
+  display: grid;
 }
 
 .items-list label{
+  margin: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 5px;
-  padding: 5px;
   min-height: 50px;
   border-bottom: 1px solid rgba(0, 0, 255, 0.3);
 }
@@ -89,6 +95,10 @@ h1{
   flex-grow: 1;
   max-width: 30ch;
   font-size: 1rem;
+  margin-right: auto;
+}
+.items-list .item::first-letter{
+  text-transform: uppercase;
 }
 @media screen and (max-width:500px) {
   .items-list .item{
@@ -111,6 +121,6 @@ h1{
   color: white;
 }
 
-.items-list input[type='checkbox']:checked + div{
+.items-list input[type='checkbox']:checked + p{
   text-decoration: line-through;
 }
