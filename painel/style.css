@@ -29,10 +29,15 @@ li {
   background-color: #333;
 }
 
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 .list-items {
   padding: 10vh 20px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
   justify-content: center;
   gap: 30px;
 }
@@ -65,25 +70,26 @@ li {
 }
 
 @media screen and (max-width: 1024px) {
-  .list-items {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  .item {
+    grid-template-rows: auto 50px;
   }
 
-  .item {
-    align-items: end;
+  .item img {
+    grid-column: 1;
+    grid-row: 1/3;
   }
 
   .item a {
-    font-weight: 300;
-    align-items: end;
-    color: #202124;
     transform: translateY(0);
-    background: linear-gradient(transparent 78%, #ffffffcc 0%);
+    grid-row: 2;
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .list-items{
+    padding: 5vh 0px;
+  }
   .item a {
     padding-bottom: 5px;
   }
