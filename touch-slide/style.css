@@ -1,0 +1,31 @@
+main{
+  display: grid;
+  min-height: 90vh;
+  margin: 0;
+  place-items: center;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.slide{
+  display: flex;
+  gap: 30px;
+  /* transform: translate3d(200px,0,0); */
+}
+
+.slide li{
+  list-style: none;
+  flex-shrink: 0;
+  max-width: 700px;
+}
+
+
+@media screen and (max-width:768px) {
+  .slide li{
+    max-width: 300px;
+  }
+}
